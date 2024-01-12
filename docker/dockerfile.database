@@ -1,0 +1,9 @@
+FROM mysql:5.7-debian
+WORKDIR /app
+COPY docker/database/setup.sh .
+COPY docker/database/init_database.sql .
+RUN pwd && echo ""
+RUN ls -lisa && echo ""
+RUN ./setup.sh
+ENV HOST=0.0.0.0 PORT=3306
+EXPOSE ${3306}

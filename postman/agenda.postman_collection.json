@@ -1,0 +1,2769 @@
+{
+	"info": {
+		"_postman_id": "2288c9a4-03dc-4e60-b6d7-076f8b1821d7",
+		"name": "agenda",
+		"description": "Momento 3 Avaliação - agenda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3173755"
+	},
+	"item": [
+		{
+			"name": "calendars",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Calendar Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/calendars/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Calendar model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/calendars/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"calendars",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Calendar Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/calendars/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"user_id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/calendars/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"calendars",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Calendar PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Calendar Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/calendars/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"user_id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/calendars/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"calendars",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Calendar PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Calendar Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/calendars/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Calendar model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/calendars/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"calendars",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"user_id\": \"<number>\",\n  \"categories\": [\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<number>\",\n      \"calendar_id\": \"<number>\",\n      \"calendar\": {\n        \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    },\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<number>\",\n      \"calendar_id\": \"<number>\",\n      \"calendar\": {\n        \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    }\n  ],\n  \"events\": [\n    {\n      \"description\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"id\": \"<number>\",\n      \"calendar_id\": \"<number>\",\n      \"calendar\": {\n        \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    },\n    {\n      \"description\": \"<string>\",\n      \"start_date\": \"<string>\",\n      \"end_date\": \"<string>\",\n      \"id\": \"<number>\",\n      \"calendar_id\": \"<number>\",\n      \"calendar\": {\n        \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n      },\n      \"foreignKey\": {}\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Calendar Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/calendars/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/calendars/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"calendars",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Calendar DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Calendar Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"<string>\",\n  \"user_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/calendars",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"calendars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Calendar model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/calendars",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"user_id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Calendar Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"user_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/calendars?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"calendars"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Calendar PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"user_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/calendars?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Calendar Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/calendars?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"calendars"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Calendar model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/calendars?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"calendars"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"description\": \"<string>\",\n    \"id\": \"<number>\",\n    \"user_id\": \"<number>\",\n    \"categories\": [\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      },\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      }\n    ],\n    \"events\": [\n      {\n        \"description\": \"<string>\",\n        \"start_date\": \"<string>\",\n        \"end_date\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      },\n      {\n        \"description\": \"<string>\",\n        \"start_date\": \"<string>\",\n        \"end_date\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      }\n    ]\n  },\n  {\n    \"description\": \"<string>\",\n    \"id\": \"<number>\",\n    \"user_id\": \"<number>\",\n    \"categories\": [\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      },\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      }\n    ],\n    \"events\": [\n      {\n        \"description\": \"<string>\",\n        \"start_date\": \"<string>\",\n        \"end_date\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      },\n      {\n        \"description\": \"<string>\",\n        \"start_date\": \"<string>\",\n        \"end_date\": \"<string>\",\n        \"id\": \"<number>\",\n        \"calendar_id\": \"<number>\",\n        \"calendar\": {\n          \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n        },\n        \"foreignKey\": {}\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Category Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Category model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Category Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Category PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Category Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Category PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Category Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Category model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\",\n  \"calendar\": {\n    \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n  },\n  \"foreignKey\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Category Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Category DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Category Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"description\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Category Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Category Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/categories?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Category model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"description\": \"<string>\",\n    \"id\": \"<number>\",\n    \"calendar_id\": \"<number>\",\n    \"calendar\": {\n      \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  },\n  {\n    \"description\": \"<string>\",\n    \"id\": \"<number>\",\n    \"calendar_id\": \"<number>\",\n    \"calendar\": {\n      \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Event Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Event model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Event Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Event PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Event Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Event PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Event Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Event model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\",\n  \"calendar\": {\n    \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n  },\n  \"foreignKey\": {}\n}"
+								}
+							]
+						},
+						{
+							"name": "Event Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Event DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Event Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/events",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Event model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendar_id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/events?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Event PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"description\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"calendar_id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/events?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Event model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"description\": \"<string>\",\n    \"start_date\": \"<string>\",\n    \"end_date\": \"<string>\",\n    \"id\": \"<number>\",\n    \"calendar_id\": \"<number>\",\n    \"calendar\": {\n      \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  },\n  {\n    \"description\": \"<string>\",\n    \"start_date\": \"<string>\",\n    \"end_date\": \"<string>\",\n    \"id\": \"<number>\",\n    \"calendar_id\": \"<number>\",\n    \"calendar\": {\n      \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n    },\n    \"foreignKey\": {}\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"item": [
+				{
+					"name": "Ping Controller.ping",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/ping",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ping Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ping"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"greeting\": \"<string>\",\n  \"date\": \"<string>\",\n  \"url\": \"<string>\",\n  \"headers\": {\n    \"Content-Type\": \"<string>\",\n    \"ut7\": \"Ut nostrud id nisi\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "User Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "User Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"User PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "User Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"User PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "User Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "User model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<number>\",\n  \"calendars\": [\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<number>\",\n      \"user_id\": \"<number>\",\n      \"categories\": [\n        {\n          \"description\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        },\n        {\n          \"description\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        }\n      ],\n      \"events\": [\n        {\n          \"description\": \"<string>\",\n          \"start_date\": \"<string>\",\n          \"end_date\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        },\n        {\n          \"description\": \"<string>\",\n          \"start_date\": \"<string>\",\n          \"end_date\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        }\n      ]\n    },\n    {\n      \"description\": \"<string>\",\n      \"id\": \"<number>\",\n      \"user_id\": \"<number>\",\n      \"categories\": [\n        {\n          \"description\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        },\n        {\n          \"description\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        }\n      ],\n      \"events\": [\n        {\n          \"description\": \"<string>\",\n          \"start_date\": \"<string>\",\n          \"end_date\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        },\n        {\n          \"description\": \"<string>\",\n          \"start_date\": \"<string>\",\n          \"end_date\": \"<string>\",\n          \"id\": \"<number>\",\n          \"calendar_id\": \"<number>\",\n          \"calendar\": {\n            \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n          },\n          \"foreignKey\": {}\n        }\n      ]\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "User Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"User DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "User Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of User model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<number>\",\n    \"calendars\": [\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"user_id\": \"<number>\",\n        \"categories\": [\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ],\n        \"events\": [\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ]\n      },\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"user_id\": \"<number>\",\n        \"categories\": [\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ],\n        \"events\": [\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"status\": \"<string>\",\n    \"id\": \"<number>\",\n    \"calendars\": [\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"user_id\": \"<number>\",\n        \"categories\": [\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ],\n        \"events\": [\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ]\n      },\n      {\n        \"description\": \"<string>\",\n        \"id\": \"<number>\",\n        \"user_id\": \"<number>\",\n        \"categories\": [\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ],\n        \"events\": [\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          },\n          {\n            \"description\": \"<string>\",\n            \"start_date\": \"<string>\",\n            \"end_date\": \"<string>\",\n            \"id\": \"<number>\",\n            \"calendar_id\": \"<number>\",\n            \"calendar\": {\n              \"value\": \"<Circular reference to #/components/schemas/CalendarWithRelations detected>\"\n            },\n            \"foreignKey\": {}\n          }\n        ]\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		}
+	]
+}

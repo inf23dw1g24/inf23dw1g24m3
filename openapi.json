@@ -1,0 +1,3661 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "agenda",
+    "version": "0.0.1",
+    "description": "Momento 3 Avaliação - agenda",
+    "contact": {}
+  },
+  "paths": {
+    "/calendars/count": {
+      "get": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "count",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "calendars.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Calendar>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarController.count"
+      }
+    },
+    "/calendars/{id}/categories": {
+      "post": {
+        "x-controller-name": "CalendarCategoryController",
+        "x-operation-name": "create",
+        "tags": [
+          "CalendarCategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCategoryInCalendar"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CalendarCategoryController.create"
+      },
+      "patch": {
+        "x-controller-name": "CalendarCategoryController",
+        "x-operation-name": "patch",
+        "tags": [
+          "CalendarCategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar.Category PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "categories.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Category>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CalendarCategoryController.patch"
+      },
+      "get": {
+        "x-controller-name": "CalendarCategoryController",
+        "x-operation-name": "find",
+        "tags": [
+          "CalendarCategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Calendar has many Category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarCategoryController.find"
+      },
+      "delete": {
+        "x-controller-name": "CalendarCategoryController",
+        "x-operation-name": "delete",
+        "tags": [
+          "CalendarCategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar.Category DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "categories.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Category>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarCategoryController.delete"
+      }
+    },
+    "/calendars/{id}/events": {
+      "post": {
+        "x-controller-name": "CalendarEventController",
+        "x-operation-name": "create",
+        "tags": [
+          "CalendarEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEventInCalendar"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CalendarEventController.create"
+      },
+      "patch": {
+        "x-controller-name": "CalendarEventController",
+        "x-operation-name": "patch",
+        "tags": [
+          "CalendarEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar.Event PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "events.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Event>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CalendarEventController.patch"
+      },
+      "get": {
+        "x-controller-name": "CalendarEventController",
+        "x-operation-name": "find",
+        "tags": [
+          "CalendarEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Calendar has many Event",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarEventController.find"
+      },
+      "delete": {
+        "x-controller-name": "CalendarEventController",
+        "x-operation-name": "delete",
+        "tags": [
+          "CalendarEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar.Event DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "events.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Event>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarEventController.delete"
+      }
+    },
+    "/calendars/{id}/user": {
+      "get": {
+        "x-controller-name": "CalendarUserController",
+        "x-operation-name": "getUser",
+        "tags": [
+          "CalendarUserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User belonging to Calendar",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CalendarUserController.getUser"
+      }
+    },
+    "/calendars/{id}": {
+      "put": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Calendar PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Calendar"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CalendarController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Calendar PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalendarPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CalendarController.updateById"
+      },
+      "get": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalendarWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/calendars.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarController.findById"
+      },
+      "delete": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Calendar DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CalendarController.deleteById"
+      }
+    },
+    "/calendars": {
+      "post": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "create",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Calendar"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCalendar"
+              }
+            }
+          }
+        },
+        "operationId": "CalendarController.create"
+      },
+      "patch": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "calendars.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Calendar>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalendarPartial"
+              }
+            }
+          }
+        },
+        "operationId": "CalendarController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "CalendarController",
+        "x-operation-name": "find",
+        "tags": [
+          "CalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Calendar model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CalendarWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/calendars.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CalendarController.find"
+      }
+    },
+    "/categories/count": {
+      "get": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "count",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "categories.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Category>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoryController.count"
+      }
+    },
+    "/categories/{id}/calendar": {
+      "get": {
+        "x-controller-name": "CategoryCalendarController",
+        "x-operation-name": "getCalendar",
+        "tags": [
+          "CategoryCalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar belonging to Category",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Calendar"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CategoryCalendarController.getCalendar"
+      }
+    },
+    "/categories/{id}/events": {
+      "post": {
+        "x-controller-name": "CategoryEventController",
+        "x-operation-name": "create",
+        "tags": [
+          "CategoryEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEventInCategory"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoryEventController.create"
+      },
+      "patch": {
+        "x-controller-name": "CategoryEventController",
+        "x-operation-name": "patch",
+        "tags": [
+          "CategoryEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category.Event PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "events.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Event>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoryEventController.patch"
+      },
+      "get": {
+        "x-controller-name": "CategoryEventController",
+        "x-operation-name": "find",
+        "tags": [
+          "CategoryEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Category has many Event",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoryEventController.find"
+      },
+      "delete": {
+        "x-controller-name": "CategoryEventController",
+        "x-operation-name": "delete",
+        "tags": [
+          "CategoryEventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category.Event DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "events.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Event>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoryEventController.delete"
+      }
+    },
+    "/categories/{id}": {
+      "put": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Category PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoryController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Category PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "CategoryController.updateById"
+      },
+      "get": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "findById",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/categories.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoryController.findById"
+      },
+      "delete": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Category DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "CategoryController.deleteById"
+      }
+    },
+    "/categories": {
+      "post": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "create",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCategory"
+              }
+            }
+          }
+        },
+        "operationId": "CategoryController.create"
+      },
+      "patch": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "categories.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Category>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryPartial"
+              }
+            }
+          }
+        },
+        "operationId": "CategoryController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "CategoryController",
+        "x-operation-name": "find",
+        "tags": [
+          "CategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Category model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CategoryWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/categories.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "CategoryController.find"
+      }
+    },
+    "/events/count": {
+      "get": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "count",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "events.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Event>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EventController.count"
+      }
+    },
+    "/events/{id}/calendar": {
+      "get": {
+        "x-controller-name": "EventCalendarController",
+        "x-operation-name": "getCalendar",
+        "tags": [
+          "EventCalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Calendar belonging to Event",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Calendar"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EventCalendarController.getCalendar"
+      }
+    },
+    "/events/{id}/category": {
+      "get": {
+        "x-controller-name": "EventCategoryController",
+        "x-operation-name": "getCategory",
+        "tags": [
+          "EventCategoryController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Category belonging to Event",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EventCategoryController.getCategory"
+      }
+    },
+    "/events/{id}": {
+      "put": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Event PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EventController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Event PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "EventController.updateById"
+      },
+      "get": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "findById",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/events.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EventController.findById"
+      },
+      "delete": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Event DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "EventController.deleteById"
+      }
+    },
+    "/events": {
+      "post": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "create",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewEvent"
+              }
+            }
+          }
+        },
+        "operationId": "EventController.create"
+      },
+      "patch": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Event PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "events.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Event>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EventPartial"
+              }
+            }
+          }
+        },
+        "operationId": "EventController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "EventController",
+        "x-operation-name": "find",
+        "tags": [
+          "EventController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of Event model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/events.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "EventController.find"
+      }
+    },
+    "/ping": {
+      "get": {
+        "x-controller-name": "PingController",
+        "x-operation-name": "ping",
+        "tags": [
+          "PingController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Ping Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PingResponse"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "PingController.ping"
+      }
+    },
+    "/users/count": {
+      "get": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "count",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "users.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<User>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UserController.count"
+      }
+    },
+    "/users/{id}/calendars": {
+      "post": {
+        "x-controller-name": "UserCalendarController",
+        "x-operation-name": "create",
+        "tags": [
+          "UserCalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Calendar"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewCalendarInUser"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UserCalendarController.create"
+      },
+      "patch": {
+        "x-controller-name": "UserCalendarController",
+        "x-operation-name": "patch",
+        "tags": [
+          "UserCalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User.Calendar PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "calendars.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Calendar>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CalendarPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UserCalendarController.patch"
+      },
+      "get": {
+        "x-controller-name": "UserCalendarController",
+        "x-operation-name": "find",
+        "tags": [
+          "UserCalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of User has many Calendar",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Calendar"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UserCalendarController.find"
+      },
+      "delete": {
+        "x-controller-name": "UserCalendarController",
+        "x-operation-name": "delete",
+        "tags": [
+          "UserCalendarController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User.Calendar DELETE success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "calendars.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Calendar>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UserCalendarController.delete"
+      }
+    },
+    "/users/{id}": {
+      "put": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "replaceById",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "User PUT success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UserController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "updateById",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "User PATCH success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "UserController.updateById"
+      },
+      "get": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "findById",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UserController.findById"
+      },
+      "delete": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "deleteById",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "User DELETE success"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "UserController.deleteById"
+      }
+    },
+    "/users": {
+      "post": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "create",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUser"
+              }
+            }
+          }
+        },
+        "operationId": "UserController.create"
+      },
+      "patch": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "updateAll",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "User PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "users.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<User>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserPartial"
+              }
+            }
+          }
+        },
+        "operationId": "UserController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "UserController",
+        "x-operation-name": "find",
+        "tags": [
+          "UserController"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of User model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "UserController.find"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "User": {
+        "title": "User",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "NewUser": {
+        "title": "NewUser",
+        "type": "object",
+        "description": "(tsType: Omit<User, 'id'>, schemaOptions: { title: 'NewUser', exclude: [ 'id' ] })",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "status"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<User, 'id'>"
+      },
+      "CategoryWithRelations": {
+        "title": "CategoryWithRelations",
+        "type": "object",
+        "description": "(tsType: CategoryWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "calendar": {
+            "$ref": "#/components/schemas/CalendarWithRelations"
+          },
+          "foreignKey": {},
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventWithRelations"
+            }
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "CategoryWithRelations"
+      },
+      "EventWithRelations": {
+        "title": "EventWithRelations",
+        "type": "object",
+        "description": "(tsType: EventWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          },
+          "calendar": {
+            "$ref": "#/components/schemas/CalendarWithRelations"
+          },
+          "foreignKey": {},
+          "category": {
+            "$ref": "#/components/schemas/CategoryWithRelations"
+          }
+        },
+        "required": [
+          "description",
+          "start_date",
+          "end_date"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "EventWithRelations"
+      },
+      "CalendarWithRelations": {
+        "title": "CalendarWithRelations",
+        "type": "object",
+        "description": "(tsType: CalendarWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "number"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserWithRelations"
+          },
+          "foreignKey": {},
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventWithRelations"
+            }
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CategoryWithRelations"
+            }
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "CalendarWithRelations"
+      },
+      "UserWithRelations": {
+        "title": "UserWithRelations",
+        "type": "object",
+        "description": "(tsType: UserWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "calendars": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CalendarWithRelations"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "status"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "UserWithRelations"
+      },
+      "UserPartial": {
+        "title": "UserPartial",
+        "type": "object",
+        "description": "(tsType: Partial<User>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<User>"
+      },
+      "Calendar": {
+        "title": "Calendar",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "NewCalendarInUser": {
+        "title": "NewCalendarInUser",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Calendar, 'id'>, 'user_id'>, schemaOptions: { title: 'NewCalendarInUser', exclude: [ 'id' ], optional: [ 'user_id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Calendar, 'id'>, 'user_id'>"
+      },
+      "CalendarPartial": {
+        "title": "CalendarPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Calendar>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Calendar>"
+      },
+      "Event": {
+        "title": "Event",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description",
+          "start_date",
+          "end_date"
+        ],
+        "additionalProperties": false
+      },
+      "NewEvent": {
+        "title": "NewEvent",
+        "type": "object",
+        "description": "(tsType: Omit<Event, 'id'>, schemaOptions: { title: 'NewEvent', exclude: [ 'id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description",
+          "start_date",
+          "end_date"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Event, 'id'>"
+      },
+      "EventPartial": {
+        "title": "EventPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Event>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Event>"
+      },
+      "Category": {
+        "title": "Category",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "NewCategory": {
+        "title": "NewCategory",
+        "type": "object",
+        "description": "(tsType: Omit<Category, 'id'>, schemaOptions: { title: 'NewCategory', exclude: [ 'id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Category, 'id'>"
+      },
+      "CategoryPartial": {
+        "title": "CategoryPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Category>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Category>"
+      },
+      "NewEventInCategory": {
+        "title": "NewEventInCategory",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Event, 'id'>, 'category_id'>, schemaOptions: { title: 'NewEventInCategory', exclude: [ 'id' ], optional: [ 'category_id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description",
+          "start_date",
+          "end_date"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Event, 'id'>, 'category_id'>"
+      },
+      "NewCalendar": {
+        "title": "NewCalendar",
+        "type": "object",
+        "description": "(tsType: Omit<Calendar, 'id'>, schemaOptions: { title: 'NewCalendar', exclude: [ 'id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Calendar, 'id'>"
+      },
+      "NewEventInCalendar": {
+        "title": "NewEventInCalendar",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Event, 'id'>, 'calendar_id'>, schemaOptions: { title: 'NewEventInCalendar', exclude: [ 'id' ], optional: [ 'calendar_id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          },
+          "category_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description",
+          "start_date",
+          "end_date"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Event, 'id'>, 'calendar_id'>"
+      },
+      "NewCategoryInCalendar": {
+        "title": "NewCategoryInCalendar",
+        "type": "object",
+        "description": "(tsType: @loopback/repository-json-schema#Optional<Omit<Category, 'id'>, 'calendar_id'>, schemaOptions: { title: 'NewCategoryInCalendar', exclude: [ 'id' ], optional: [ 'calendar_id' ] })",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "calendar_id": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository-json-schema#Optional<Omit<Category, 'id'>, 'calendar_id'>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "calendars.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "calendars.ScopeFilter"
+      },
+      "calendars.IncludeFilter.Items": {
+        "title": "calendars.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "user",
+              "events",
+              "categories"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/calendars.ScopeFilter"
+          }
+        }
+      },
+      "calendars.Filter": {
+        "type": "object",
+        "title": "calendars.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "description": {
+                    "type": "boolean"
+                  },
+                  "user_id": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "description",
+                    "user_id"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "calendars.Fields"
+          },
+          "include": {
+            "title": "calendars.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/calendars.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Calendar>"
+      },
+      "calendars.Filter1": {
+        "type": "object",
+        "title": "calendars.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "calendars.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "description": {
+                    "type": "boolean"
+                  },
+                  "user_id": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "description",
+                    "user_id"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "calendars.Fields"
+          },
+          "include": {
+            "title": "calendars.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/calendars.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Calendar>"
+      },
+      "categories.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "categories.ScopeFilter"
+      },
+      "categories.IncludeFilter.Items": {
+        "title": "categories.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "calendar",
+              "events"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/categories.ScopeFilter"
+          }
+        }
+      },
+      "categories.Filter": {
+        "type": "object",
+        "title": "categories.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "description": {
+                    "type": "boolean"
+                  },
+                  "calendar_id": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "description",
+                    "calendar_id"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "categories.Fields"
+          },
+          "include": {
+            "title": "categories.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/categories.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Category>"
+      },
+      "categories.Filter1": {
+        "type": "object",
+        "title": "categories.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "categories.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "description": {
+                    "type": "boolean"
+                  },
+                  "calendar_id": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "description",
+                    "calendar_id"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "categories.Fields"
+          },
+          "include": {
+            "title": "categories.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/categories.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Category>"
+      },
+      "events.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "events.ScopeFilter"
+      },
+      "events.IncludeFilter.Items": {
+        "title": "events.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "calendar",
+              "category"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/events.ScopeFilter"
+          }
+        }
+      },
+      "events.Filter": {
+        "type": "object",
+        "title": "events.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "description": {
+                    "type": "boolean"
+                  },
+                  "start_date": {
+                    "type": "boolean"
+                  },
+                  "end_date": {
+                    "type": "boolean"
+                  },
+                  "calendar_id": {
+                    "type": "boolean"
+                  },
+                  "category_id": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "description",
+                    "start_date",
+                    "end_date",
+                    "calendar_id",
+                    "category_id"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "events.Fields"
+          },
+          "include": {
+            "title": "events.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/events.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Event>"
+      },
+      "events.Filter1": {
+        "type": "object",
+        "title": "events.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "events.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "description": {
+                    "type": "boolean"
+                  },
+                  "start_date": {
+                    "type": "boolean"
+                  },
+                  "end_date": {
+                    "type": "boolean"
+                  },
+                  "calendar_id": {
+                    "type": "boolean"
+                  },
+                  "category_id": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "description",
+                    "start_date",
+                    "end_date",
+                    "calendar_id",
+                    "category_id"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "events.Fields"
+          },
+          "include": {
+            "title": "events.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/events.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Event>"
+      },
+      "PingResponse": {
+        "type": "object",
+        "title": "PingResponse",
+        "properties": {
+          "greeting": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "properties": {
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "users.ScopeFilter": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              }
+            ]
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false,
+        "title": "users.ScopeFilter"
+      },
+      "users.IncludeFilter.Items": {
+        "title": "users.IncludeFilter.Items",
+        "type": "object",
+        "properties": {
+          "relation": {
+            "type": "string",
+            "enum": [
+              "calendars"
+            ]
+          },
+          "scope": {
+            "$ref": "#/components/schemas/users.ScopeFilter"
+          }
+        }
+      },
+      "users.Filter": {
+        "type": "object",
+        "title": "users.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name",
+                    "email",
+                    "status"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "users.Fields"
+          },
+          "include": {
+            "title": "users.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/users.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<User>"
+      },
+      "users.Filter1": {
+        "type": "object",
+        "title": "users.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "users.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "boolean"
+                  },
+                  "email": {
+                    "type": "boolean"
+                  },
+                  "status": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "name",
+                    "email",
+                    "status"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "users.Fields"
+          },
+          "include": {
+            "title": "users.IncludeFilter",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/users.IncludeFilter.Items"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<User>"
+      }
+    }
+  }
+}
