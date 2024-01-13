@@ -4,7 +4,7 @@ version: '3.1'
 services:
 
   db:
-    image: inf23dw1g24/mysql:m3
+    image: db:v2
     container_name: db
     build:
       context: .
@@ -17,7 +17,7 @@ services:
       - "3306:3306"
 
   api:
-    image: inf23dw1g24/api:m3
+    image: api:v2
     container_name: api
     depends_on:
       - db
@@ -29,7 +29,7 @@ services:
     ports:
       - "3000:3000"
   ui:
-    image: inf23dw1g24/ui:m3
+    image: ui:v2
     container_name: ui
     depends_on:
       - db
