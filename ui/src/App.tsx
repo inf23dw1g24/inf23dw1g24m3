@@ -15,7 +15,8 @@ import { CalendarsEdit } from "./components/CalendarsEdit";
 import { EventsEdit } from "./components/EventsEdit";
 import { CategoriesEdit } from "./components/CategoriesEdit";
 
-const dataProvider = lb4Provider('http://api:4000');
+const dataProvider = lb4Provider('http://api:3000');
+//ataProvider = lb4Provider('http://localhost:3000');
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>

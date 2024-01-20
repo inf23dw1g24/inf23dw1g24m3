@@ -4,7 +4,7 @@ version: '3.1'
 services:
 
   db:
-    image: inf23dw1g24/mysql:m3
+    image: inf23dw1g24/db:m3
     container_name: db
     build:
       context: .
@@ -22,8 +22,8 @@ services:
     depends_on:
       - db
     build:
-      context: .
-      dockerfile: ./api/Dockerfile
+      context: ./api
+      dockerfile: Dockerfile
     environment:
       NODE_ENV: production
     ports:
